@@ -1,0 +1,17 @@
+{
+    "menu": {
+        "title": "Ценртснос",
+        "menuItems": [{
+            "name": "Главная",
+            "url": "index.html"
+        },
+        {
+            "name": "О нас",
+            "url": "#about"
+        },
+        {
+            "name": "Контакты",
+            "url": "#contact-us"
+        }]
+    }
+}

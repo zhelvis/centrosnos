@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+// const StaticFilesWebpackPlugin = require('static-files-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const data = require('./data');
 
 module.exports = {
   entry: {
-    "app.js": ['@babel/polyfill', path.resolve(__dirname, "src")]
+    "index.js": path.resolve(__dirname, "src")
   },
   output: {
     path: path.resolve(__dirname, "build/static"),
@@ -21,15 +23,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/index.html")
-    }),
+      template: path.resolve(__dirname, "src/templates/main.hbs"),
+      templateParameters: data
+    })
   ],
   resolve: {
     extensions: [".js", ".json", ".mjs"],
     alias: {
-      api: path.resolve(__dirname, "src/api"),
-      components: path.resolve(__dirname, "src/components"),
-      static: path.resolve(__dirname, "src/static"),
+      fonts: path.resolve(__dirname, "src/fonts"),
+      images: path.resolve(__dirname, "src/images"),
+      styles: path.resolve(__dirname, "src/styles"),
+      scripts: path.resolve(__dirname, "src/scripts")
     }
   },
   module: {
@@ -47,29 +51,20 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[path][name]__[local]',
-                mode: 'local',
-              },
-            }
           },
           {
             loader: 'sass-loader',
-          },
-          {
-            loader: `postcss-loader`,
-            options: {
-              plugins: () => {
-                autoprefixer({ browsers: [ 'last 2 versions' ] });
-              }
-            }
           }
         ]
       },
       {
-        test:  /\.(svg|ttf)$/,
-        loader: 'file-loader',
+        test:  /\.(svg|ttf|png|jpg|woff|woff2|eot)$/,
+        loader: 'url-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test:  /\.hbs$/,
+        loader: 'handlebars-loader',
         exclude: /node_modules/,
       },
     ]
