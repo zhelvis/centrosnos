@@ -1,31 +1,19 @@
 <div class="services section bg-grey">
     <div class="container">
         <div class="title-section">
-            <h3>Услуги</h3>
-            <p><span class="line"></span> Choose what you like our services</p>
+            <h3>{{services.title}}</h3>
+            <p><span class="line"></span>{{services.subtitle}}</p>
         </div>
         <div class="row">
-            <div class="col col-md-4 col-sm-12 col-12">
-                <div class="content">
-                    <img src="static/images/destruction.jpg" alt="">
-                    <h5>от 23 000 руб.</h5>
-                    <p class="mb-0">Демонтаж частных домов, дач, бань и коттеджей</p>
+            {{#each services.items}}
+                <div class="col col-md-4 col-sm-12 col-12">
+                    <div class="content">
+                        <img width="100%" src="{{img}}" alt="">
+                        <h5>{{price}}</h5>
+                        <p class="mb-0">{{title}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col col-md-4 col-sm-12 col-12">
-                <div class="content content-center">
-                    <i class="fab fa-wordpress"></i>
-                    <h5>WordPress</h5>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quisquam maxime eos, culpa minus placeat.</p>
-                </div>
-            </div>
-            <div class="col col-md-4 col-sm-12 col-12">
-                <div class="content">
-                    <i class="fab fa-magento"></i>
-                    <h5>Magento</h5>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quisquam maxime eos, culpa minus placeat.</p>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 </div>

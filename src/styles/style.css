@@ -1145,12 +1145,15 @@ footer h6 {
 }
 
 @media (max-width:420px) {
+    .home-intro:before {
+        display: none;
+    }
     .home-intro .content::before {
-        width: 115px;
+        display: none;
     }
 
     .home-intro .content::after {
-        width: 115px;
+        display: none;
     }
 
 }
@@ -1160,13 +1163,30 @@ footer h6 {
         padding-left: 30px;
     }
 
+    .about .content h3 {
+        font-size: 24px;
+    }
+
+    .home-intro h5 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .home-intro h6 {
+        color: #fff;
+        line-height: 20px;
+        font-size: 17px;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
     .home-intro h2 {
-        font-size: 42px;
-        line-height: 60px;
+        font-size: 36px;
+        line-height: 40px;
     }
 
     .title-section h3 {
-        font-size: 45px;
+        font-size: 32px;
     }
 
     .about .content-image {

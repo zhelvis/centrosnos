@@ -1,45 +1,23 @@
 <div class="latest-blog section bg-grey">
     <div class="container">
         <div class="title-section">
-            <h3>Latest Blog</h3>
-            <p><span class="line"></span> Get info from blog</p>
+            <h3>{{category.title}}</h3>
+            <p><span class="line"></span>{{category.subtitle}}</p>
         </div>
         <div class="row">
-            <div class="col col-sm-12 col-12 col-md-4">
-                <div class="content">
-                    <img src="images/blog3.jpg" alt="" class="w-100">
-                    
-                    <div class="content-text">
-                        <h5><a href="">Coffea make you dont Sleep untill Morning</a></h5>
-                        <span>03 March 2020</span>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-sm-12 col-12 col-md-4">
-                <div class="content">
-                    <img src="images/blog1.jpg" alt="" class="w-100">
-                    
-                    <div class="content-text">
+            {{#each category.items}}
+                <div class="col col-sm-12 col-12 col-md-4">
+                    <div class="content">
+                        <img src="img" alt="" class="w-100">
                         
-                        <h5><a href="">Make your Working place Beatiful  </a></h5>
-                        <span>11 April 2020</span>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                        <div class="content-text">
+                            <h5><a href="">{{title}}</a></h5>
+                            <span>{{subtitle}}</span>
+                            <p class="mb-0">{{text}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col col-sm-12 col-12 col-md-4">
-                <div class="content r-980">
-                    <img src="images/blog4.jpg" alt="" class="w-100">
-                    
-                    <div class="content-text">
-                        
-                        <h5><a href="">Start Coding now or you Keyboard</a></h5>
-                        <span>21 July 2020</span>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 </div>
