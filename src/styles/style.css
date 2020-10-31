@@ -9,7 +9,6 @@ Author URL : https://themeforest.net/user/astylers
 /*
 
 Table of Content:
-- fonts
 - general
 - button
 - navbar
@@ -30,9 +29,6 @@ Table of Content:
 - responsive
 
 */
-
-/* fonts */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 
 /* general */
 body {
