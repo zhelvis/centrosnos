@@ -1,7 +1,9 @@
 const path = require('path');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+
 const data = require('./data');
 
 module.exports = {
@@ -26,7 +28,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'index.css',
-    })
+    }),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
+    }),
   ],
   resolve: {
     extensions: [".js", ".json", ".mjs"],
@@ -41,6 +46,7 @@ module.exports = {
     rules: [
       {
         test:  /\.js$/,
+        sideEffects: true,
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -59,9 +65,16 @@ module.exports = {
         ]
       },
       {
-        test:  /\.(svg|ttf|png|jpg|woff|woff2|eot)$/,
+        test: /\.(jpg|png|gif|svg)$/,
+        loader: 'image-webpack-loader',
+        enforce: 'pre'
+      },
+      {
+        test: /\.(jpe?g|png|gif|woff|woff2)$/,
         loader: 'url-loader',
-        exclude: /node_modules/,
+        options: {
+          limit: 10 * 1024
+        }
       },
       {
         test:  /\.hbs$/,
