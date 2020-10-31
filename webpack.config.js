@@ -1,8 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const StaticFilesWebpackPlugin = require('static-files-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const data = require('./data');
 
 module.exports = {
@@ -24,6 +23,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/templates/main.hbs"),
       templateParameters: data
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'index.css',
     })
   ],
   resolve: {
@@ -47,6 +49,9 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
+          },
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
