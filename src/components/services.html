@@ -1,0 +1,20 @@
+<div id="services" class="services section bg-grey">
+    <div class="container">
+        <div class="title-section">
+            <h3>{{ services.title }}</h3>
+            <p>Мы оказываем полный комплекс работ по демонтажу любой сложности</p>
+            <p><b>Работаем вручную и с помощью спецтехники</b></p>
+        </div>
+        <div class="row">
+            {% for service in services.items %}
+                <div class="col col-md-4 col-sm-12 col-12">
+                    <div class="content">
+                        <img style="width: 100%; max-height: 170px; object-fit: cover;" src="{{ service.img }}" alt="{{ service.title }}">
+                        <h5>{{ service.price }}</h5>
+                        <p class="mb-0">{{ service.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

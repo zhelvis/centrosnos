@@ -1,86 +1,31 @@
-const path = require('path');
-const glob = require('glob');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
-
-const data = require('./data');
+const path = require('path')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
-  entry: {
-    "index.js": path.resolve(__dirname, "src")
-  },
-  output: {
-    path: path.resolve(__dirname, "build/static"),
-    filename: "[name]",
-    publicPath: './',
-  },
-  devServer: {
-    hot: true,
-    historyApiFallback: true,
-    compress: true,
-    publicPath: '/',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/templates/main.hbs"),
-      templateParameters: data
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'index.css',
-    }),
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
-    }),
-  ],
-  resolve: {
-    extensions: [".js", ".json", ".mjs"],
-    alias: {
-      fonts: path.resolve(__dirname, "src/fonts"),
-      images: path.resolve(__dirname, "src/images"),
-      styles: path.resolve(__dirname, "src/styles"),
-      scripts: path.resolve(__dirname, "src/scripts")
-    }
-  },
+  mode: process.env.NODE_ENV || 'production',
+  plugins: [new ESLintPlugin({ fix: true })],
   module: {
     rules: [
       {
-        test:  /\.js$/,
-        sideEffects: true,
-        loader: 'babel-loader',
+        test: /\.js$/,
         exclude: /node_modules/,
-      },
-      {
-        test: /\.(css|scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    useBuiltIns: 'usage',
+                    corejs: { version: 3, proposals: true },
+                  },
+                ],
+              ],
+            },
           },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-          }
-        ]
+        ],
       },
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        loader: 'image-webpack-loader',
-        enforce: 'pre'
-      },
-      {
-        test: /\.(jpe?g|png|gif|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10 * 1024
-        }
-      },
-      {
-        test:  /\.hbs$/,
-        loader: 'handlebars-loader',
-        exclude: /node_modules/,
-      },
-    ]
-  }
-};
+    ],
+  },
+}
