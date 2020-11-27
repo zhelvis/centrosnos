@@ -1,9 +1,15 @@
 <footer id="contacts" class="section">
   <div class="container">
-      <h6>{{title}}</h6>
+      <h6><a href="/">{{title}}</a></h6>
       <p>{{subtitle}}</p>
-      <p><i class="fa fa-map-marker-alt"></i> {{location}}</p>
-      <p><a href={{phone.link}}>{{phone.text}}</a></p>
-      <span>© 2020 {{title}}</span>
+      <p><i class="fa fa-map-marker-alt" aria-hidden="true"></i> {{location}}</p>
+      <div class="phones">
+        <p><a href={{phone.link}}><i class="fa fa-phone-square" aria-hidden="true"></i> {{phone.text}}</a></p>
+        <p><a href={{whatsapp.link}}><i class="fab fa-whatsapp" aria-hidden="true"></i> {{whatsapp.text}}</a></p>
+      </div>
+      <p><a href="/policy">Политика Конфиденциальности</a></p>
+      <p><a href="/disclaimer">Отказ от ответственности</a></p>
+      <p><a href="/nooffer">Информация, указанная на сайте, не является публичной офертой</a></p>
+      <p><span>© 2020 {{title}}</span></p>
   </div>
 </footer>

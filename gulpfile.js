@@ -63,7 +63,7 @@ const data = require('./data.json')
 
 function html() {
   return gulp
-    .src('./src/pages/*.html')
+    .src('./src/pages/**/*.html')
     .pipe(
       nunjucks({
         path: ['./src/components'],
@@ -108,7 +108,7 @@ function assets() {
 function watchFiles() {
   gulp.watch(['./src/styles/*.css', './src/styles/*.scss'], styles)
   gulp.watch('./src/js/*.js', js)
-  gulp.watch(['./src/pages/*.html', './src/templates/*.html'], html)
+  gulp.watch(['./src/pages/**/*.html', './src/components/*.html'], html)
   gulp.watch('./src/img/*', img)
   gulp.watch('./src/fonts/*', fonts)
   gulp.watch('./src/assets/*', assets)

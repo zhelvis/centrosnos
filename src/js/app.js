@@ -7,9 +7,9 @@ $(function () {
     var onScroll = $(this).scrollTop()
 
     if (onScroll > 50) {
-      $('.navbar').addClass('navbar-fixed')
+      $('#header').addClass('navbar-fixed')
     } else {
-      $('.navbar').removeClass('navbar-fixed')
+      $('#header').removeClass('navbar-fixed')
     }
   })
 
