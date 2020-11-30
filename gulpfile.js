@@ -79,7 +79,7 @@ function html() {
 
 function img() {
   return gulp
-    .src('src/images/*')
+    .src('src/images//**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./public/images'))
     .pipe(browsersync.stream())
@@ -89,7 +89,7 @@ function img() {
 
 function fonts() {
   return gulp
-    .src('src/fonts/*')
+    .src('src/fonts/**/*')
     .pipe(gulp.dest('./public/fonts'))
     .pipe(browsersync.stream())
 }
@@ -98,7 +98,7 @@ function fonts() {
 
 function assets() {
   return gulp
-    .src('src/assets/*')
+    .src('src/assets/**/*')
     .pipe(gulp.dest('./public'))
     .pipe(browsersync.stream())
 }
@@ -106,12 +106,12 @@ function assets() {
 // Watch files
 
 function watchFiles() {
-  gulp.watch(['./src/styles/*.css', './src/styles/*.scss'], styles)
-  gulp.watch('./src/js/*.js', js)
-  gulp.watch(['./src/pages/**/*.html', './src/components/*.html'], html)
-  gulp.watch('./src/img/*', img)
-  gulp.watch('./src/fonts/*', fonts)
-  gulp.watch('./src/assets/*', assets)
+  gulp.watch(['./src/styles/**/*.css', './src/styles/**/*.scss'], styles)
+  gulp.watch('./src/js/**/*.js', js)
+  gulp.watch(['./src/pages/**/*.html', './src/components/**/*.html'], html)
+  gulp.watch('./src/img//**/*', img)
+  gulp.watch('./src/fonts//**/*', fonts)
+  gulp.watch('./src/assets//**/*', assets)
 }
 
 // complex behavior

@@ -5,6 +5,7 @@ const config = {
       ? [
           require('@fullhuman/postcss-purgecss')({
             content: ['./src/**/*.html', './src/**/*.js'],
+            safelist: ['fa-search', 'fa-bolt', 'fa-snowflake'],
           }),
           require('cssnano')({
             preset: 'default',

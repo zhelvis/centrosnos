@@ -1,0 +1,19 @@
+<div id="advantages" class="latest-blog section">
+    <div class="container">
+        <div class="title-section">
+            <h3>{{advantages.title}}</h3>
+        </div>
+        <div class="row">
+            {% for advantage in advantages.items %}
+                <div class="col col-sm-12 col-md-6 col-lg-4">
+                    <div class="content">
+                        <div class="content-text">
+                            <p style="font-size: 2rem" ><i class="fa {{advantage.icon}}" aria-hidden="true"></i></p>
+                            <h5>{{advantage.title}}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

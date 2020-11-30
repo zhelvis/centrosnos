@@ -1,0 +1,18 @@
+<div id="special-equipment" class="services section">
+    <div class="container">
+        <div class="title-section">
+            <h3>{{equipments.title}}</h3>
+        </div>
+        <div class="row row-flex">
+            {% for equipment in equipments.items %}
+            <div class="col col-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="content">
+                    <img loading="lazy" src="{{equipment.img}}" alt={{equipment.title}}>
+                    <h5>{{ equipment.title }}</h5>
+                    <p class="mb-0">{{ equipment.text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

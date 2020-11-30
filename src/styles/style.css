@@ -291,7 +291,7 @@ p {
 /* home intro */
 .wrapper-intro {
   background: linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
-    url('https://центроснос.com/images/snos-derevyannogo-doma.jpg');
+    url('https://центроснос.com/images/services/snos-derevyannogo-doma.jpg');
   background-size: cover;
   background-position: center center;
 }
@@ -468,7 +468,21 @@ p {
   padding: 100px 0 90px;
 }
 
+.services a {
+  color: #0caed4;
+  text-decoration: underline;
+}
+
+.services .row {
+  align-items: stretch;
+}
+
+.services .row > * {
+  margin-bottom: 1rem;
+}
+
 .services .content {
+  height: 100%;
   background: #fff;
   padding: 30px;
   margin-bottom: 30px;
@@ -483,6 +497,12 @@ p {
 
 .services .content h5 {
   font-weight: 600;
+}
+
+.services .content img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .services .content:after {
@@ -558,7 +578,7 @@ p {
   color: #222;
 }
 
-.our-work .content a:hover .caption {
+.our-work .content:hover .caption {
   opacity: 1;
   width: 100%;
   transition: all 0.3s ease;
@@ -655,7 +675,20 @@ p {
   background: #fff;
 }
 
+.latest-blog .row {
+  align-items: stretch;
+}
+
+.latest-blog .row > * {
+  margin-bottom: 1rem;
+}
+
+.latest-blog .content {
+  height: 100%;
+}
+
 .latest-blog .content-text {
+  height: 100%;
   padding: 30px;
   border-bottom: 4px solid #ffc239;
 }
@@ -941,12 +974,12 @@ footer h6 {
   margin-bottom: 28px;
 }
 
-footer .phones {
+footer .contacts {
   margin: 2rem 0;
   font-size: 1.2rem;
 }
 
-footer .phones a {
+footer .contacts a {
   color: #ffc239;
 }
 

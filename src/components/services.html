@@ -3,13 +3,13 @@
         <div class="title-section">
             <h3>{{ services.title }}</h3>
             <p>Мы оказываем полный комплекс работ по демонтажу любой сложности</p>
-            <p><b>Работаем вручную и с помощью спецтехники</b></p>
+            <p><b>Работаем вручную и с помощью <a href="#special-equipment">спецтехники</a></b></p>
         </div>
         <div class="row">
             {% for service in services.items %}
-                <div class="col col-md-4 col-sm-12 col-12">
+                <div class="col col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="content">
-                        <img loading="lazy" style="width: 100%; height: 170px; object-fit: cover;" src="{{ service.img }}" alt="{{ service.title }}">
+                        <img loading="lazy" src="{{ service.img }}" alt="{{ service.title }}">
                         <h5>{{ service.price }}</h5>
                         <p class="mb-0">{{ service.title }}</p>
                     </div>
