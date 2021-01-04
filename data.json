@@ -1,9 +1,8 @@
 {
   "title": "ЦЕНТРОСНОС",
   "locale": "ru",
-  "description": "Демонтаж дома за 1 день в Москве и Московской области",
-  "subtitle": "Демонтаж дома за 1 день",
-  "location": "Москва и МО",
+  "description": "Демонтаж дома от 23000 руб. с официальным вывозом мусора за 1 день",
+  "location": "Москва и МО в радиусе 250 км",
   "hours": "7.00 - 00.00",
   "email": {
     "link": "mailto:centrsnos@gmail.com",
@@ -45,62 +44,74 @@
       {
         "img": "/images/services/snos-derevyannogo-doma.jpg",
         "price": "от 23 000 руб.",
-        "title": "Демонтаж каркасного дома"
+        "title": "Демонтаж каркасного дома",
+        "text": "Выполняется вручную за 1 день. Работает бригада 2-3 человека. Мусор вывозится контейнерами на 8-32 куб."
       },
       {
         "img": "/images/services/demontazh-doma-is-sruba.jpg",
         "price": "от 23 000 руб.",
-        "title": "Демонтаж дома из сруба"
+        "title": "Демонтаж дома из сруба",
+        "text": "Выполняется вручную за 1 день. Работает бригада 2-3 человека. Мусор вывозится контейнерами на 8-32 куб."
       },
       {
         "img": "/images/services/demontazh-doma-is-brusa.jpg",
         "price": "от 23 000 руб.",
-        "title": "Демонтаж дома из бруса"
+        "title": "Демонтаж дома из бруса",
+        "text": "Выполняется вручную за 1 день. Работает бригада 2-3 человека. Мусор вывозится контейнерами на 8-32 куб."
       },
       {
         "img": "/images/services/snos-kamennogo-doma.jpg",
         "price": "от 23 000 руб.",
-        "title": "Демонтаж кирпичного или каменного домов"
+        "title": "Демонтаж кирпичного или каменного дома",
+        "text": "text"
       },
       {
         "img": "/images/services/snos-fundamenta.jpg",
         "price": "от 9 000 руб.",
-        "title": "Демонтаж фундамента"
+        "title": "Демонтаж фундамента",
+        "text": "text"
       },
       {
         "img": "/images/services/Demontazh-zaborov.jpg",
         "price": "от 9 000 руб.",
-        "title": "Демонтаж заборов и ворот"
+        "title": "Демонтаж заборов и ворот",
+        "text": "text"
       },
       {
         "img": "/images/services/snos-posle-pozhara.jpg",
         "price": "от 23 000 руб.",
-        "title": "Демонтаж дома после пожара"
+        "title": "Демонтаж дома после пожара",
+        "text": "text"
       },
       {
         "img": "/images/services/demontazh-bani.jpg",
         "price": "от 19 000 руб.",
-        "title": "Демонтаж бани"
+        "title": "Демонтаж бани",
+        "text": "text"
       },
       {
         "img": "/images/services/snos-pristroiki.jpg",
         "price": "от 19 000 руб.",
-        "title": "Демонтаж пристроек к дому"
+        "title": "Демонтаж пристроек к дому",
+        "text": "text"
       },
       {
         "img": "/images/services/udalenie-kustarnika.jpg",
         "price": "от 200 руб/м2",
-        "title": "Удаление кустарника"
+        "title": "Удаление кустарника",
+        "text": "text"
       },
       {
         "img": "/images/services/udalenie-pney.jpg",
         "price": "от 1 000 руб/шт.",
-        "title": "Выкорчёвывание пней"
+        "title": "Выкорчёвывание пней",
+        "text": "text"
       },
       {
         "img": "/images/services/viravnivanie-uchastka.jpg",
         "price": "от 27 000 руб.",
-        "title": "Выравнивание участка"
+        "title": "Выравнивание участка",
+        "text": "text"
       }
     ]
   },

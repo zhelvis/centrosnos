@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md fixed-top navbar-fixed">
+<nav class="navbar navbar-expand-xl fixed-top navbar-fixed">
     <div class="container">
         <a href="/" class="navbar-brand">{{ title }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -6,11 +6,17 @@
             <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto navbar-nav_contacts">
                 <li class="nav-item">
-                    <a href="{{ phone.link }}" class="nav-link">{{ phone.text }}</a>
+                  <a href="{{phone.link}}" class="nav-link">{{ phone.text }}</a>
                 </li>
-            </ul>
+                <li class="nav-item">
+                  <a href={{whatsapp.link}} class="nav-link">
+                    <span class="nav-item__link_wa__text">{{ whatsapp.text }}</span>
+                    <i class="fab fa-whatsapp nav-item__link_wa__icon"></i> 
+                  </a>
+                </li>
+              </ul>
         </div>
     </div>
 </nav>

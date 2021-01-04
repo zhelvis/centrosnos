@@ -1,0 +1,26 @@
+.navbar-nav_contacts {
+    align-items: center;
+
+    @media (max-width: 1199px){
+        align-items: stretch; 
+    }
+}
+
+.nav-item__link_wa__icon {
+  font-size: 2rem;
+
+  @media (max-width: 1199px){
+    padding-left: 0.5rem;
+    font-size: 1rem; 
+  }
+}
+
+.nav-item__link_wa__text {
+    display: none;
+    
+    @media (max-width: 1199px){
+      display: inline; 
+    }
+}
+  
+
