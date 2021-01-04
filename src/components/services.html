@@ -10,8 +10,9 @@
                 <div class="col col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="content">
                         <img loading="lazy" src="{{ service.img }}" alt="{{ service.title }}">
-                        <h5>{{ service.price }}</h5>
-                        <p class="mb-0">{{ service.title }}</p>
+                        <h5>{{ service.title }}</h5>
+                        <h6>{{ service.price }}</h6>
+                        <p class="mb-0">{{ service.text }}</p>
                     </div>
                 </div>
             {% endfor %}

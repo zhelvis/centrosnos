@@ -289,89 +289,25 @@ p {
 }
 
 /* home intro */
-.wrapper-intro {
+
+.intro {
   background: linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),
     url('https://центроснос.com/images/services/snos-derevyannogo-doma.jpg');
   background-size: cover;
   background-position: center center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.home-intro {
-  position: relative;
-  padding: 180px 0 120px !important;
-}
-
-.home-intro .content {
-  z-index: 999;
-  position: relative;
-}
-
-.home-intro .content .button-intro {
-  border: 2px solid #ffc239;
-  background: transparent;
-  padding: 10px 30px;
-}
-
-.home-intro .content .button-intro:hover {
-  border-color: #fff;
-}
-
-.home-intro .content .button {
-  background: #0caed4;
-}
-
-.home-intro .content-text {
-  padding: 80px 0 80px 50px;
-}
-
-.home-intro .content:before {
-  width: 350px;
-  background: #ffc239;
-  height: 100%;
-  border: 8px solid #fff;
-  position: absolute;
-  content: '';
-  z-index: -1;
-}
-
-.home-intro .content:after {
-  width: 350px;
-  background: #ffc239;
-  height: calc(100% - 100px);
-  position: absolute;
-  content: '';
-  z-index: -1;
-  top: 50px;
-  left: 12px;
-}
-
-.home-intro .button:hover {
-  color: #333;
-}
-
-.home-intro .hb-fill-right:before {
-  background: #fff !important;
-  color: #333 !important;
-}
-
-.home-intro:before {
-  width: 45%;
-  background: #ffc239;
-  height: 100%;
-  position: absolute;
-  content: '';
-  z-index: 999;
-  top: 0;
-}
-
-.home-intro h5 {
+.intro h5 {
   color: #fff;
   font-size: 26px;
   margin-bottom: 32px;
   font-weight: 600;
 }
 
-.home-intro h2 {
+.intro h2 {
   color: #fff;
   font-size: 62px;
   font-weight: 700;
@@ -380,19 +316,12 @@ p {
   letter-spacing: 1px;
 }
 
-.home-intro h6 {
+.intro h6 {
   color: #fff;
   line-height: 35px;
   font-size: 17px;
   margin-bottom: 15px;
   width: 60%;
-}
-
-.home-intro img {
-  height: auto;
-  max-width: 100%;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 /* section */
@@ -532,6 +461,10 @@ p {
 }
 
 .services .content:hover p {
+  color: #fff;
+}
+
+.services .content:hover h6 {
   color: #fff;
 }
 
@@ -1003,15 +936,15 @@ footer .contacts a {
 
 /*responsive*/
 @media (max-width: 991px) {
-  .home-intro h2 {
+  .intro h2 {
     line-height: 80px;
   }
 
-  .home-intro .content::before {
+  .intro .content::before {
     width: 245px;
   }
 
-  .home-intro .content::after {
+  .intro .content::after {
     width: 245px;
   }
 
@@ -1025,7 +958,7 @@ footer .contacts a {
     padding: 0 10px;
   }
 
-  .home-intro h2 {
+  .intro h2 {
     line-height: 80px;
   }
 
@@ -1087,11 +1020,11 @@ footer .contacts a {
     padding: 0 32px;
   }
 
-  .home-intro .content::before {
+  .intro .content::before {
     width: 168px;
   }
 
-  .home-intro .content::after {
+  .intro .content::after {
     width: 168px;
   }
 
@@ -1167,20 +1100,20 @@ footer .contacts a {
 }
 
 @media (max-width: 420px) {
-  .home-intro:before {
+  .intro:before {
     display: none;
   }
-  .home-intro .content::before {
+  .intro .content::before {
     display: none;
   }
 
-  .home-intro .content::after {
+  .intro .content::after {
     display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .home-intro .content-text {
+  .intro .content-text {
     padding-left: 30px;
   }
 
@@ -1188,12 +1121,12 @@ footer .contacts a {
     font-size: 24px;
   }
 
-  .home-intro h5 {
+  .intro h5 {
     font-size: 22px;
     margin-bottom: 18px;
   }
 
-  .home-intro h6 {
+  .intro h6 {
     color: #fff;
     line-height: 20px;
     font-size: 17px;
@@ -1201,7 +1134,7 @@ footer .contacts a {
     width: 100%;
   }
 
-  .home-intro h2 {
+  .intro h2 {
     font-size: 36px;
     line-height: 40px;
   }
@@ -1236,7 +1169,7 @@ footer .contacts a {
 }
 
 @media (max-width: 360px) {
-  .home-intro h2 {
+  .intro h2 {
     font-size: 36px;
     line-height: 48px;
   }
