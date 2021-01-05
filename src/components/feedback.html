@@ -1,11 +1,50 @@
-<div id="feedback-form" class="section bg-grey">
+<div id="contacts" class="contact section-no-title bg-grey">
     <div class="container">
-        <div class="feedback-block">
-            <h4>Оставьте заявку и мы вам перезвоним!</h4>
-            <div class="input-group">
-                <input id="feedback-input" class="feedback-input" type="tel" placeholder="+7 (XXX) XXX-XX-XX" required>
-                <button type="submit" class="feedback-button" onclick="alert('Fuck you!')">Заказать звонок</button>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="content-block content-border">
+                    <h5>Контакты</h5>
+                    <ul>
+                        <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i> {{location}}</li>
+                        <li><i class="fa fa-clock" aria-hidden="true"></i> {{hours}}</li>
+                        <li><a href={{phone.link}}><i class="fa fa-phone-square" aria-hidden="true"></i>
+                                {{phone.text}}</a></li>
+                        <li><a href={{whatsapp.link}}><i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                {{whatsapp.text}}</a></li>
+                        <li><a href={{email.link}}><i class="fa fa-at" aria-hidden="true"></i> {{email.text}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="content-block">
+                    <h5>Оставьте заявку и мы вам перезвоним!</h5>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <input type="text" placeholder="Имя">
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <input type="phone" required placeholder="Телефон">
+                            </div>
+                        </div>
+                        <textarea placeholder="Ваше сообщение" cols="30" rows="3"></textarea>
+                        <button class="button hbtn hb-fill-right">Заказать звонок</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--
+    <li><i class="fa fa-map-marker-alt" aria-hidden="true"></i> {{location}}</li>
+      <li><i class="fa fa-clock" aria-hidden="true"></i> {{hours}}</li>
+      <div class="contacts">
+        <li><a href={{phone.link}}><i class="fa fa-phone-square" aria-hidden="true"></i> {{phone.text}}</a></li>
+        <li><a href={{whatsapp.link}}><i class="fab fa-whatsapp" aria-hidden="true"></i> {{whatsapp.text}}</a></li>
+        <li><a href={{email.link}}><i class="fa fa-at" aria-hidden="true"></i> {{email.text}}</a></li>
+      </div>
+      <li><a href="/policy">Политика Конфиденциальности</a></li>
+      <li><a href="/disclaimer">Отказ от ответственности</a></li>
+      <li><a href="/nooffer">Информация, указанная на сайте, не является публичной офертой</a></li>
+-->
