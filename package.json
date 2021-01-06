@@ -60,14 +60,12 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "4.5.3",
     "bootstrap4-notify": "4.0.3",
     "express": "4.17.1",
     "jquery": "3.5.1",
     "nodemailer": "^6.4.17",
-    "popper.js": "1.16.1",
-    "xoauth2": "^1.2.0"
+    "popper.js": "1.16.1"
   }
 }
