@@ -4,6 +4,8 @@ import 'bootstrap4-notify'
 $(function () {
   'use strict'
 
+  $('html').css('scroll-behavior', 'smooth')
+
   $.notifyDefaults({
     delay: 2000,
     allow_dismiss: false,
@@ -19,6 +21,10 @@ $(function () {
     <span data-notify="message">{2}</span>
   </div>`,
   })
+
+  if ($(window).scrollTop() > 50) {
+    $('#header').addClass('navbar-fixed')
+  }
 
   $(window).on('scroll', function () {
     var onScroll = $(this).scrollTop()

@@ -1,18 +1,23 @@
-<div id="services" class="services section-contacts bg-grey">
-    <div class="container">
+<div class="services section bg-grey">
+    <div id="services" class="container">
         <div class="title-section">
             <h3>{{ services.title }}</h3>
             <p>Мы оказываем полный комплекс работ по демонтажу любой сложности</p>
-            <p><b>Работаем вручную и с помощью <a href="#special-equipment">спецтехники</a></b></p>
+            <p><b>Работаем вручную и с помощью <a class="services__link" href="#special-equipment">спецтехники</a></b></p>
         </div>
         <div class="row">
             {% for service in services.items %}
                 <div class="col col-12 col-sm-12 col-md-6 col-lg-4">
-                    <div class="content">
-                        <img loading="lazy" src="{{ service.img }}" alt="{{ service.title }}">
-                        <h5>{{ service.title }}</h5>
-                        <h6>{{ service.price }}</h6>
-                        <p class="mb-0">{{ service.text }}</p>
+                    <div id="{{ service.id }}"class="content">
+                        <div class="content__body">
+                            <img loading="lazy" src="{{ service.img }}" alt="{{ service.title }}">
+                            <h5>{{ service.title }}</h5>
+                            <h6>{{ service.price | striptags(true) | escape | nl2br  }}</h6>
+                            <p class="mb-0">{{ service.text}}</p>
+                        </div>
+                        <div>
+                            <a href="#feedback" class="button hbtn hb-fill-right">Оставить заявку</a>
+                        </div>  
                     </div>
                 </div>
             {% endfor %}

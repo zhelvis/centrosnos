@@ -1,47 +1,13 @@
-/*
-
-Wacov - Elegant HTML Template
-Author : aStylers
-Author URL : https://themeforest.net/user/astylers
-
-*/
-
-/*
-
-Table of Content:
-- general
-- button
-- navbar
-- header title
-- about us
-- home intro
-- section title
-- services
-- our works
-- features
-- latest blog
-- blog
-- blog single
-- pagination
-- contact
-- testimonial
-- footer
-- responsive
-
-*/
-
-/* general */
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: #fff;
   color: #242424;
   font-size: 15px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
+}
+
+div[id] {
+  scroll-margin-top: 120px;
 }
 
 h1 {
@@ -326,7 +292,6 @@ p {
 
 /* section */
 .section {
-  scroll-margin-top: 2rem;
   padding: 100px 0 120px;
 }
 
@@ -397,7 +362,7 @@ p {
   padding: 100px 0 90px;
 }
 
-.services a {
+.services .services__link {
   color: #0caed4;
   font-weight: bold;
 }
@@ -411,6 +376,8 @@ p {
 }
 
 .services .content {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   background: #fff;
   padding: 30px;
@@ -422,6 +389,10 @@ p {
   right: 100%;
   left: 0;
   z-index: 99;
+}
+
+.services .content .content__body {
+  flex-grow: 1;
 }
 
 .services .content h5 {
@@ -441,6 +412,10 @@ p {
 
 .services .content h5 {
   margin: 25px 0 14px;
+}
+
+.services .content h6 {
+  line-height: 1.6rem;
 }
 
 /* our work */
