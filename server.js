@@ -1,8 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
+const nunjucks = require('nunjucks')
 
 const { port, mail } = require('./config')
+const utm = require('./utm')
+const data = require('./data.json')
 
 let transporter = nodemailer.createTransport({
   host: mail.host,
@@ -19,8 +22,21 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json({ extended: true }))
 
-app.get('/', (_req, res) => {
-  res.sendFile('index.html')
+nunjucks.configure(['./src/pages', './src/components'])
+
+app.get('/', (req, res) => {
+  const utmContent = req.query.utm_content
+
+  if (utmContent && Object.keys(utm).includes(utmContent)) {
+    res.send(
+      nunjucks.render(
+        `main.html`,
+        Object.assign(data, { subtitle: utm[utmContent] })
+      )
+    )
+  } else {
+    res.sendFile(`public/main.html`, { root: __dirname })
+  }
 })
 
 app.post('/', async (req, res) => {
