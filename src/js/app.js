@@ -43,6 +43,8 @@ $(function () {
   $('#form').on('submit', async function (event) {
     event.preventDefault()
 
+    ym(70746484, 'reachGoal', 'order-form')
+
     try {
       const responce = await fetch('/', {
         method: 'POST',
