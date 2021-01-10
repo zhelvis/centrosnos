@@ -1116,3 +1116,36 @@ footer .contacts a {
     margin-bottom: 0;
   }
 }
+
+/* Prices */
+
+#prices-table > table > thead {
+  background-color: #ffc239;
+  color: white;
+}
+
+.section.prices-table {
+  padding-bottom: 60px !important;
+}
+
+.section.prices-calc {
+  padding-top: 0 !important;
+}
+
+.section.prices-calc > .title-section {
+  margin-bottom: 25px;
+}
+
+.section.prices-calc .card {
+  height: 100%;
+  border: none;
+  border-left: 4px solid #ffc239;
+}
+
+.section.prices-calc .row > .col {
+  margin-bottom: 1rem;
+}
+
+.section.prices-calc .card sup {
+  line-height: 0;
+}
