@@ -1,6 +1,5 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')
-const Fiber = require('fibers')
+const sass = require('gulp-dart-sass')
 const postcss = require('gulp-postcss')
 const named = require('vinyl-named')
 const webpack = require('webpack-stream')
@@ -38,7 +37,7 @@ sass.compiler = require('sass')
 function styles() {
   return gulp
     .src('./src/styles/index.scss')
-    .pipe(sass({ fiber: Fiber }).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss())
     .pipe(gulp.dest('./public'))
     .pipe(browsersync.stream())
