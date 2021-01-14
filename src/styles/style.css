@@ -58,9 +58,11 @@ ul {
   margin: 0;
 }
 
+/*
 ul li {
   list-style-type: none;
 }
+*/
 
 p {
   line-height: 26px;
@@ -227,6 +229,10 @@ p {
   color: #fff;
   font-weight: 600;
   font-size: 44px;
+}
+
+.about .content ul {
+  margin-bottom: 1rem;
 }
 
 .about .content span {
@@ -739,6 +745,7 @@ p {
 .contact .content-block li {
   margin-bottom: 16px;
   font-size: 1.1rem;
+  list-style-type: none;
 }
 
 .contact form input,
@@ -1139,7 +1146,7 @@ footer .contacts a {
 .section.prices-calc .card {
   height: 100%;
   border: none;
-  border-left: 4px solid #ffc239;
+  border-bottom: 4px solid #ffc239;
 }
 
 .section.prices-calc .row > .col {
@@ -1148,4 +1155,8 @@ footer .contacts a {
 
 .section.prices-calc .card sup {
   line-height: 0;
+}
+
+.price__table {
+  background-color: white;
 }
