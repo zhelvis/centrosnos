@@ -1,0 +1,67 @@
+.button {
+    background: #dedede;
+    color: black;
+    padding: 12px 30px;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 0;
+
+
+    &:hover{
+         /* удалить после рефакторинга */
+        color: black;
+    }
+}
+
+.button_primary {
+    background: $primary;
+}
+
+.button_primary.hb-fill-right {
+    &:hover{
+        color: white;
+    }
+
+    &:before{
+        background: $secondary !important;
+    }   
+}
+
+.button_secondary {
+    background: $secondary;
+    color: white;
+}
+
+.button_secondary.hb-fill-right {
+    &:before{
+        background: $primary !important;
+    }   
+}
+
+.link {
+    color: $primary;
+    text-decoration: none;
+}
+
+.input,
+.textarea {
+  border: 2px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 6px;
+  width: 100%;
+  color: black;
+  &:focus {
+    outline: none;
+  }
+}
+
+::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+
+  

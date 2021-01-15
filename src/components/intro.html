@@ -1,10 +1,24 @@
 <div class="intro">
     <div class="container">
-        <div class="content">
-            <h2>{{title}}</h2>
-            <h5>{{subtitle}}</h5>
-            <h6><i class="fa fa-map-marker-alt" aria-hidden="true"></i> {{location}}</h6>
-            <a href="#services" class="button hbtn hb-fill-right">Узнать больше</a>
-        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <h2 class="intro__title">{{title}}</h2>
+                <h5 class="intro__subtitle1">{{subtitle}}</h5>
+                <h6 class="intro__subtitle2"><i class="fa fa-map-marker-alt" aria-hidden="true"></i> {{location}}</h6>
+                <a class="button intro__button button_secondary hbtn hb-fill-right" href="#services">Узнать больше</a>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="intro__feedback">
+                    <h5 class="intro__feedback__title">Оставьте заявку и мы вам перезвоним!</h5>
+                    <p>или скинте в <a href={{whatsapp.link}} class="link">whatsapp</a> фото объекта для сноса, а мы вам скажем стоймость услуг</p>
+                    <form class="intro__feedback__form" id="form">
+                        <input class="input" id="phone" name="phone" type="text" placeholder="Телефон" required>
+                        <div>
+                            <button class="button button_primary hbtn hb-fill-right" type="submit" >Заказать звонок</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>   
     </div>
 </div>

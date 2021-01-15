@@ -1,12 +1,18 @@
+
 @use './fonts.css';
 @use './fontawesome.min.css';
 @use './bootstrap.min.css';
 @use './animate.min.css';
 @use './hoverbuttons.css';
+
 @use './feedback.css';
 @use './style.css';
-@use './colors.scss';
 @use './nav-contacts.scss';
+
+
+@import './colors.scss';
+@import './common.scss';
+@import './intro.scss';
 
 * {
     margin: 0;
