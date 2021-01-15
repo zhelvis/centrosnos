@@ -1,6 +1,6 @@
 {
   "name": "centrosnos",
-  "version": "3.2.0",
+  "version": "3.2.2",
   "description": "centrosnos website",
   "main": "server.js",
   "scripts": {

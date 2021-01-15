@@ -40,11 +40,9 @@ $(function () {
     $('.navbar-collapse').collapse('hide')
   })
 
-  $('#form').on('submit', async function (event) {
+  const sendFormDataAs = (name) => async (event) => {
     event.preventDefault()
-
-    ym(70746484, 'reachGoal', 'order-form')
-
+    ym(70746484, 'reachGoal', name)
     try {
       const responce = await fetch('/', {
         method: 'POST',
@@ -73,5 +71,8 @@ $(function () {
         type: 'danger',
       })
     }
-  })
+  }
+
+  $('#form').on('submit', sendFormDataAs('order-form'))
+  $('#form-top').on('submit', sendFormDataAs('order-form-top'))
 })
