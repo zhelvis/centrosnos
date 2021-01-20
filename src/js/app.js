@@ -40,7 +40,7 @@ $(function () {
     $('.navbar-collapse').collapse('hide')
   })
 
-  const sendFormDataAs = (name) => async (event) => {
+  const sendFormDataAs = (name, body) => async (event) => {
     event.preventDefault()
     ym(70746484, 'reachGoal', name)
     try {
@@ -50,11 +50,7 @@ $(function () {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: $('#name').val(),
-          phone: $('#phone').val(),
-          message: $('#message').val(),
-        }),
+        body,
       })
 
       if (responce.ok) {
@@ -73,6 +69,25 @@ $(function () {
     }
   }
 
-  $('#form').on('submit', sendFormDataAs('order-form'))
-  $('#form-top').on('submit', sendFormDataAs('order-form-top'))
+  $('#form').on(
+    'submit',
+    sendFormDataAs(
+      'order-form',
+      JSON.stringify({
+        name: $('#name').val(),
+        phone: $('#phone').val(),
+        message: $('#message').val(),
+      })
+    )
+  )
+
+  $('#form-top').on(
+    'submit',
+    sendFormDataAs(
+      'order-form-top',
+      JSON.stringify({
+        phone: $('#top-phone').val(),
+      })
+    )
+  )
 })
