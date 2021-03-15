@@ -40,40 +40,11 @@ $(function () {
     $('.navbar-collapse').collapse('hide')
   })
 
-  const sendFormDataAs = (name, body) => async (event) => {
-    event.preventDefault()
-    ym(70746484, 'reachGoal', name)
-    try {
-      const responce = await fetch('/', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body,
-      })
-
-      if (responce.ok) {
-        $.notify('Заявка успешно отправлена!', {
-          type: 'success',
-        })
-      } else {
-        $.notify('Произошла ошибка при обработке заявки', {
-          type: 'danger',
-        })
-      }
-    } catch (_e) {
-      $.notify('Произошла ошибка при попытке отправить заявку', {
-        type: 'danger',
-      })
-    }
-  }
-
   $('#form').on('submit', async (event) => {
     event.preventDefault()
     ym(70746484, 'reachGoal', 'order-form')
     try {
-      const responce = await fetch('/', {
+      const responce = await fetch('/feedback', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -106,7 +77,7 @@ $(function () {
     event.preventDefault()
     ym(70746484, 'reachGoal', 'order-form-top')
     try {
-      const responce = await fetch('/', {
+      const responce = await fetch('/feedback/intro', {
         method: 'POST',
         mode: 'cors',
         headers: {

@@ -1,11 +1,13 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const path = require('path')
+const fastify = require('fastify')()
 const nodemailer = require('nodemailer')
 const nunjucks = require('nunjucks')
 
 const { port, mail } = require('./config')
 const utm = require('./utm')
 const data = require('./data.json')
+
+nunjucks.configure(['./src/pages', './src/components'])
 
 let transporter = nodemailer.createTransport({
   host: mail.host,
@@ -17,61 +19,107 @@ let transporter = nodemailer.createTransport({
   },
 })
 
-const app = express()
+fastify.register(require('fastify-static'), {
+  root: path.join(__dirname, 'public'),
+})
 
-app.use(express.static('public'))
-app.use(bodyParser.json({ extended: true }))
+const getHomePageSchema = {
+  querystring: {
+    type: 'object',
+    properties: {
+      utm_content: { type: 'string', enum: Object.keys(utm) },
+    },
+  },
+}
 
-nunjucks.configure(['./src/pages', './src/components'])
+fastify.get('/', { schema: getHomePageSchema }, (request, reply) => {
+  const utmContent = request.query.utm_content
 
-app.get('/', (req, res) => {
-  const utmContent = req.query.utm_content
-
-  if (utmContent && Object.keys(utm).includes(utmContent)) {
-    res.send(
-      nunjucks.render(
-        `main.html`,
-        Object.assign(data, { subtitle: utm[utmContent] })
+  if (utmContent) {
+    reply
+      .type('text/html')
+      .send(
+        nunjucks.render(
+          `main.html`,
+          Object.assign(data, { subtitle: utm[utmContent] })
+        )
       )
-    )
   } else {
-    res.sendFile(`public/main.html`, { root: __dirname })
+    reply.sendFile(`main.html`)
   }
 })
 
-app.post('/', async (req, res) => {
-  const { name, phone, message } = req.body
-  if (!phone) res.status(400).end()
+const introFeedbackSchema = {
+  body: {
+    type: 'object',
+    required: ['phone'],
+    properties: {
+      phone: { type: 'string' },
+    },
+  },
+}
 
-  try {
-    await transporter.sendMail({
+fastify.post(
+  '/feedback/intro',
+  { schema: introFeedbackSchema },
+  async (request, _reply) => {
+    return await transporter.sendMail({
       from: mail.user,
       to: mail.to,
       subject: 'Заявка с сайта ЦЕНТРОСНОС',
       html: `
-          <p>Имя: ${name}</p>
-          <p>Телефон: ${phone}</p>
-          <p>Сообщение:</p>
-          <p>${message}</p>
-      `,
+              <p><i>Форма: Интро<i></p>
+              <p>Телефон: ${request.body.phone}</p>
+          `,
     })
-  } catch (e) {
-    console.log(e)
-    res.status(500).end()
   }
+)
 
-  res.end()
-})
+const feedbackSchema = {
+  body: {
+    type: 'object',
+    required: ['phone'],
+    properties: {
+      phone: { type: 'string' },
+      name: { type: 'string' },
+      message: { type: 'string' },
+    },
+  },
+}
+
+fastify.post(
+  '/feedback',
+  { schema: feedbackSchema },
+  async (request, _reply) => {
+    const { name, message, phone } = request.body
+
+    return await transporter.sendMail({
+      from: mail.user,
+      to: mail.to,
+      subject: 'Заявка с сайта ЦЕНТРОСНОС',
+      html: `
+            <p><i>Форма: Основная<i></p>
+            <p>Телефон: ${phone}</p>
+            ${!!name ? `<p>Имя: ${name}</p>` : ''}
+            ${!!message ? `<p>Сообщение:</p><p>${message}</p>` : ''}
+        `,
+    })
+  }
+)
 
 const createPageRoute = (page) =>
-  app.get(`/${page}`, (_req, res) => {
-    res.sendFile(`public/${page}.html`, { root: __dirname })
+  fastify.get(`/${page}`, (_request, reply) => {
+    reply.sendFile(`${page}.html`)
   })
 
 createPageRoute('policy')
 createPageRoute('disclaimer')
 createPageRoute('nooffer')
 
-app.listen(port, () => {
-  console.log(`app started at port ${port}`)
+fastify.listen(port, (err, address) => {
+  if (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+  fastify.log.info(`server listening on ${address}`)
 })
