@@ -1,10 +1,21 @@
 import * as $ from 'jquery'
 import 'bootstrap4-notify'
+import Cleave from 'cleave.js'
+import 'cleave.js/dist/addons/cleave-phone.ru'
 
 $(function () {
   'use strict'
 
   $('html').css('scroll-behavior', 'smooth')
+
+  $('.phone-input')
+    .toArray()
+    .forEach(function (field) {
+      new Cleave(field, {
+        phone: true,
+        phoneRegionCode: 'RU',
+      })
+    })
 
   $.notifyDefaults({
     delay: 2000,
@@ -61,6 +72,8 @@ $(function () {
         $.notify('Заявка успешно отправлена!', {
           type: 'success',
         })
+
+        $('#form').trigger('reset')
       } else {
         $.notify('Произошла ошибка при обработке заявки', {
           type: 'danger',
@@ -92,6 +105,8 @@ $(function () {
         $.notify('Заявка успешно отправлена!', {
           type: 'success',
         })
+
+        $('#form-top').trigger('reset')
       } else {
         $.notify('Произошла ошибка при обработке заявки', {
           type: 'danger',

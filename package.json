@@ -60,6 +60,7 @@
     "body-parser": "^1.19.0",
     "bootstrap": "4.5.3",
     "bootstrap4-notify": "4.0.3",
+    "cleave.js": "^1.6.0",
     "fastify": "^3.14.0",
     "fastify-static": "^4.0.1",
     "jquery": "3.5.1",
