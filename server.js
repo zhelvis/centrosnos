@@ -19,7 +19,7 @@ let transporter = nodemailer.createTransport({
   },
 })
 
-fastify.register(require('fastify-static'), {
+fastify.register(require('@fastify/static'), {
   root: path.join(__dirname, 'public'),
 })
 
@@ -116,10 +116,15 @@ createPageRoute('policy')
 createPageRoute('disclaimer')
 createPageRoute('nooffer')
 
-fastify.listen(port, (err, address) => {
-  if (err) {
-    fastify.log.error(err)
-    process.exit(1)
+fastify.listen(
+  {
+    port,
+  },
+  (err, address) => {
+    if (err) {
+      fastify.log.error(err)
+      process.exit(1)
+    }
+    fastify.log.info(`server listening on ${address}`)
   }
-  fastify.log.info(`server listening on ${address}`)
-})
+)
