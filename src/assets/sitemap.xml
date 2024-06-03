@@ -2,19 +2,19 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://xn--e1aqadbjicd1b.com/</loc>
+        <loc>https://xn--e1aqadbjicd1b.xn--p1ai/</loc>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://xn--e1aqadbjicd1b.com/policy/</loc>
+        <loc>https://xn--e1aqadbjicd1b.xn--p1ai/policy/</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://xn--e1aqadbjicd1b.com/disclaimer/</loc>
+        <loc>https://xn--e1aqadbjicd1b.xn--p1ai/disclaimer/</loc>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://xn--e1aqadbjicd1b.com/nooffer/</loc>
+        <loc>https://xn--e1aqadbjicd1b.xn--p1ai/nooffer/</loc>
         <priority>0.80</priority>
     </url>
 </urlset>
